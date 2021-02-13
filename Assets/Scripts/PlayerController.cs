@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     private float jumpLowForce = 10;
     private float horizontal;
 
+    private bool canMove = true;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -30,9 +32,16 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         CheckInteract();
-        CheckMovement();
-        CheckJump();
-        CheckCancelJump();
+        if (canMove)
+        {
+            CheckMovement();
+            CheckJump();
+            CheckCancelJump();
+        }
+        else
+        {
+
+        }
         animator.SetFloat("velocity", Mathf.Abs(rb.velocity.x));
         animator.SetFloat("horizontalVelocity", rb.velocity.y);
     }
@@ -50,9 +59,12 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
             {
                 interactable.GetComponent<DialogueTrigger>().TriggerDialogue();
+                canMove = false;
             }
         }
     }
+
+    #region movement
 
     private void CheckMovement()
     {
@@ -108,29 +120,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    #endregion
 
     // For visualizing ground checker box thing
-/*    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(new Vector2(overlapBoxTransform.position.x, overlapBoxTransform.position.y),
-                            new Vector2(0.52f, 0.02f));
-    }*/
-
-    public void SetJumpForce(float to)
-    {
-        jumpForce = to;
-    }
-
-    public void SetJumpForceMin(float to)
-    {
-        jumpLowForce = to;
-    }
-
-    public void SetGravityScale(float to)
-    {
-        rb.gravityScale = to;
-    }
+    /*    void OnDrawGizmos()
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireCube(new Vector2(overlapBoxTransform.position.x, overlapBoxTransform.position.y),
+                                new Vector2(0.52f, 0.02f));
+        }*/
 
     // Called when the turn around animation finishes
     public void TurnAround()

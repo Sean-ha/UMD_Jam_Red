@@ -16,5 +16,5 @@ public struct Dialogue
 {
     [TextArea(6, 10)]
     public string dialogue;
-    public Vector2 dialogueBoxSize;
+    public Vector2 dialogueBoxScale;
 }
