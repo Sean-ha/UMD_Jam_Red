@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/InsideHouse.unity
+    guid: 06fc5765122093b4db46597585745bfa
+  - enabled: 1
+    path: Assets/Scenes/OutsideHouse.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/HospitalArea.unity
+    guid: ed2b7e230205daa4b808561ceada8eec
   m_configObjects: {}

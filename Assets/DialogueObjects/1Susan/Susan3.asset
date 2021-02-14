@@ -10,13 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cfa75a7b2b2dd540873360cdeddf403, type: 3}
-  m_Name: Test
+  m_Name: Susan3
   m_EditorClassIdentifier: 
   dialogues:
-  - dialogue: Testing yo what's up long long text
-    dialogueBoxScale: {x: 2, y: 1}
-  - dialogue: 'Testing yo what''s up
-
-      Double line text'
-    dialogueBoxScale: {x: 2, y: 1.6}
+  - dialogue: stay safe!!!
+    dialogueBoxScale: {x: 0.6, y: 1}
   id: 0

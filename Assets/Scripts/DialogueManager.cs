@@ -121,9 +121,9 @@ public class DialogueManager : MonoBehaviour
         if (dialogueCounter == 0)
         {
             dialogueArrow.transform.localScale = new Vector2(0, 0);
-            LeanTween.scale(dialogueArrow, new Vector2(1.3f, 1.3f), 0.15f).setOnComplete(ScaleBackArrow);
+            LeanTween.scale(dialogueArrow, new Vector2(1.2f, 1.2f), 0.1f).setOnComplete(ScaleBackArrow);
         }
-        LeanTween.scale(dialogueBox, new Vector2(boxScale.x + 0.3f, boxScale.y + 0.3f), 0.15f).setOnComplete(ScaleBackBox);
+        LeanTween.scale(dialogueBox, new Vector2(boxScale.x + 0.2f, boxScale.y + 0.2f), 0.1f).setOnComplete(ScaleBackBox);
 
         dialogueText.gameObject.SetActive(true);
         dialogueText.maxVisibleCharacters = 0;
@@ -144,25 +144,26 @@ public class DialogueManager : MonoBehaviour
         isWriting = false;
         canProceed = false;
 
-        LeanTween.scale(dialogueArrow, new Vector2(0, 0), 0.15f);
-        LeanTween.scale(dialogueBox, new Vector2(0, 0), 0.15f).setOnComplete(EnablePlayerMovement);
+        LeanTween.scale(dialogueArrow, new Vector2(0, 0), 0.1f);
+        LeanTween.scale(dialogueBox, new Vector2(0, 0), 0.1f).setOnComplete(EnablePlayerMovement);
         dialogueText.gameObject.SetActive(false);
     }
 
     #region LeanTween setOnComplete
     private void ScaleBackArrow()
     {
-        LeanTween.scale(dialogueArrow, new Vector2(1f, 1f), 0.1f);
+        LeanTween.scale(dialogueArrow, new Vector2(1f, 1f), 0.07f);
     }
 
     private void ScaleBackBox()
     {
-        LeanTween.scale(dialogueBox, boxScale, 0.1f);
+        LeanTween.scale(dialogueBox, boxScale, 0.07f);
     }
 
     private void EnablePlayerMovement()
     {
         pc.SetCanMove(true);
+        pc.GetComponent<Animator>().Play("Player_Idle");
     }
 
     #endregion

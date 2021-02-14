@@ -14,7 +14,7 @@ public class DialogueObject : ScriptableObject
 [Serializable]
 public struct Dialogue
 {
-    [TextArea(6, 10)]
+    [TextArea(2, 10)]
     public string dialogue;
     public Vector2 dialogueBoxScale;
 }

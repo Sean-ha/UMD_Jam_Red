@@ -5,6 +5,7 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     public DialogueObject[] dialogueObjects;
+    public int npcId;
 
     private DialogueManager dm;
     private Transform speechBubbleOrigin;
@@ -20,6 +21,7 @@ public class DialogueTrigger : MonoBehaviour
     // To be called whenever a dialogue is to be initiated
     public void TriggerDialogue()
     {
+        currentDialogue = AdvanceDialogue.GetDialogueCount(npcId);
         dm.SetDialogue(dialogueObjects[currentDialogue], speechBubbleOrigin.position);
     }
 }
