@@ -149,7 +149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 36824278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.53, y: -0.74, z: 0}
+  m_LocalPosition: {x: 33.73, y: -0.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 740825070}
@@ -193,8 +193,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dcc1ffd99118a140aa5c95634f0f3f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToEnter: 0
-  position: {x: 0, y: 0}
+  sceneToEnter: 2
+  position: {x: -13.33, y: -3.6}
   isFacingLeft: 0
 --- !u!1 &140720760
 GameObject:

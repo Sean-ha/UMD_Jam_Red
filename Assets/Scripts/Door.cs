@@ -16,14 +16,15 @@ public class Door : MonoBehaviour
 
     private void Awake()
     {
-        blackTransition = GameObject.Find("BlackTransition").GetComponent<Image>();
+        blackTransition = GameObject.FindGameObjectWithTag("BlackTransition").GetComponent<Image>();
     }
 
     public void EnterDoor()
     {
         blackTransition.color = new Color(0, 0, 0, 1);
+        blackTransition.rectTransform.anchoredPosition = new Vector2(2000, 0);
 
-        LeanTween.move(blackTransition.rectTransform, new Vector2(0, 0), .2f).setOnComplete(TransitionScene);
+        LeanTween.move(blackTransition.rectTransform, new Vector2(0, 0), .15f).setOnComplete(TransitionScene);
     }
 
     private void TransitionScene()

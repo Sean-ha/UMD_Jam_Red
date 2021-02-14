@@ -101,6 +101,7 @@ public class PlayerController : MonoBehaviour
                 else if (interactable.CompareTag("Door"))
                 {
                     canMove = false;
+                    horizontal = 0;
                     interactable.GetComponent<Door>().EnterDoor();
                 }
             }
@@ -211,6 +212,8 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.CompareTag("SceneLoader"))
         {
+            canMove = false;
+            horizontal = 0;
             collision.GetComponent<Door>().EnterDoor();
         }
     }

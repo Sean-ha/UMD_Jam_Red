@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneLoader : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class SceneLoader : MonoBehaviour
     private bool isFacingLeft;
 
     private PlayerController pc;
+    private Image blackTransition;
 
     private void Awake()
     {
@@ -35,7 +37,16 @@ public class SceneLoader : MonoBehaviour
 
     void OnSceneChange(Scene scene, LoadSceneMode mode)
     {
+        // Black screen transition
+        blackTransition = GameObject.FindGameObjectWithTag("BlackTransition").GetComponent<Image>();
+        blackTransition.color = new Color(0, 0, 0, 1);
+        blackTransition.rectTransform.anchoredPosition = new Vector2(0, 0);
+
+        LeanTween.move(blackTransition.rectTransform, new Vector2(-2000, 0), .15f).setOnComplete(OnBlackTransitionComplete);
+
         pc = FindObjectOfType<PlayerController>();
+        pc.SetCanMove(false);
+
         // Move player to the proper location
         if (position.x != 0 && position.y != 0)
         {
@@ -52,5 +63,11 @@ public class SceneLoader : MonoBehaviour
         sceneToEnter = sceneNum;
         position = pos;
         isFacingLeft = faceLeft;
+    }
+
+    private void OnBlackTransitionComplete()
+    {
+        pc.SetCanMove(true);
+        blackTransition.color = new Color(0, 0, 0, 0);
     }
 }
