@@ -15,4 +15,8 @@ MonoBehaviour:
   dialogues:
   - dialogue: Testing yo what's up long long text
     dialogueBoxScale: {x: 2, y: 1}
+  - dialogue: 'Testing yo what''s up
+
+      Double line text'
+    dialogueBoxScale: {x: 2, y: 1.6}
   id: 0

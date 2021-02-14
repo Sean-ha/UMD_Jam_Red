@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     private GameObject dialogueBox;
     private Vector2 textDimensions;
     private Vector2 boxScale;
+    private PlayerController pc;
 
     private DialogueObject currentDialogueObject;
     private Vector2 pointTo;
@@ -24,13 +25,14 @@ public class DialogueManager : MonoBehaviour
 
     // The total time it has been since the previous character has been printed
     private float timeSinceLastChar;
-    private float timeBetweenChars = 0.025f;
+    private float timeBetweenChars = 0.015f;
 
     private void Awake()
     {
         dialogueText = GameObject.Find("DialogueText").GetComponent<TextMeshProUGUI>();
         dialogueArrow = GameObject.Find("DialogueArrow");
         dialogueBox = GameObject.Find("DialogueBox");
+        pc = FindObjectOfType<PlayerController>();
         textDimensions = dialogueText.rectTransform.sizeDelta;
 
         dialogueText.gameObject.SetActive(false);
@@ -76,7 +78,15 @@ public class DialogueManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                // Proceed to next dialogue
+                // Proceed to next dialogue if possible. Otherwise, end it
+                dialogueCounter++;
+                if (dialogueCounter == currentDialogueObject.dialogues.Length)
+                {
+                    EndDialogue();
+                } else
+                {
+                    StartDialogue();
+                }
             }
         }
     }
@@ -100,17 +110,17 @@ public class DialogueManager : MonoBehaviour
         dialogueArrow.SetActive(true);
         dialogueArrow.transform.localPosition = pointTo;
         dialogueBox.transform.localPosition = new Vector2(pointTo.x, pointTo.y + .75f);
-        dialogueArrow.transform.localScale = new Vector2(0, 0);
         dialogueBox.transform.localScale = new Vector2(0, 0);
 
         // Dialogue text positioning
-        Vector2 screenPos = Camera.main.WorldToScreenPoint(new Vector2(pointTo.x, pointTo.y + 1));
+        Vector2 screenPos = Camera.main.WorldToScreenPoint(new Vector2(pointTo.x, pointTo.y + .8f));
         dialogueText.rectTransform.anchoredPosition = screenPos;
         dialogueText.rectTransform.sizeDelta = new Vector2(textDimensions.x * boxScale.x, textDimensions.y * boxScale.y);
 
         // DialogueArrow only has popup effect on first text
         if (dialogueCounter == 0)
         {
+            dialogueArrow.transform.localScale = new Vector2(0, 0);
             LeanTween.scale(dialogueArrow, new Vector2(1.3f, 1.3f), 0.15f).setOnComplete(ScaleBackArrow);
         }
         LeanTween.scale(dialogueBox, new Vector2(boxScale.x + 0.3f, boxScale.y + 0.3f), 0.15f).setOnComplete(ScaleBackBox);
@@ -129,6 +139,16 @@ public class DialogueManager : MonoBehaviour
         isWriting = true;
     }
 
+    private void EndDialogue()
+    {
+        isWriting = false;
+        canProceed = false;
+
+        LeanTween.scale(dialogueArrow, new Vector2(0, 0), 0.15f);
+        LeanTween.scale(dialogueBox, new Vector2(0, 0), 0.15f).setOnComplete(EnablePlayerMovement);
+        dialogueText.gameObject.SetActive(false);
+    }
+
     #region LeanTween setOnComplete
     private void ScaleBackArrow()
     {
@@ -138,6 +158,11 @@ public class DialogueManager : MonoBehaviour
     private void ScaleBackBox()
     {
         LeanTween.scale(dialogueBox, boxScale, 0.1f);
+    }
+
+    private void EnablePlayerMovement()
+    {
+        pc.SetCanMove(true);
     }
 
     #endregion

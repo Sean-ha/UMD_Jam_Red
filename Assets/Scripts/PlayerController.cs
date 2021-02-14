@@ -31,16 +31,12 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        CheckInteract();
         if (canMove)
         {
             CheckMovement();
             CheckJump();
             CheckCancelJump();
-        }
-        else
-        {
-
+            CheckInteract();
         }
         animator.SetFloat("velocity", Mathf.Abs(rb.velocity.x));
         animator.SetFloat("horizontalVelocity", rb.velocity.y);
@@ -53,13 +49,14 @@ public class PlayerController : MonoBehaviour
 
     private void CheckInteract()
     {
-        if (interactable != null)
+        if (interactable != null && IsGrounded())
         {
             // Press up to interact
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
             {
                 interactable.GetComponent<DialogueTrigger>().TriggerDialogue();
                 canMove = false;
+                horizontal = 0;
             }
         }
     }
@@ -141,6 +138,11 @@ public class PlayerController : MonoBehaviour
         {
             transform.localScale = new Vector2(-1, 1);
         }
+    }
+
+    public void SetCanMove(bool to)
+    {
+        canMove = to;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
