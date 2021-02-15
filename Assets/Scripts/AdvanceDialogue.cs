@@ -11,6 +11,8 @@ public class AdvanceDialogue : MonoBehaviour
             case 1: return AdvanceSusan();
             case 2: return AdvanceApril();
             case 3: return AdvanceMom();
+            case 4: return AdvanceMysteryMan();
+            case 5: return AdvanceFarmer();
         }
 
         return 0;
@@ -53,5 +55,29 @@ public class AdvanceDialogue : MonoBehaviour
             return 0;
         }
         return GameData.instance.mom1;
+    }
+
+    // 4: Mystery Man
+    private static int AdvanceMysteryMan()
+    {
+        if (GameData.instance.mysteryMan1 == 0)
+        {
+            GameData.instance.mysteryMan1 = 1;
+            return 0;
+        }
+        return GameData.instance.mysteryMan1;
+    }
+
+    private static int AdvanceFarmer()
+    {
+        // The AutoNPC interaction
+        if (!GameData.instance.gotWaterCan)
+        {
+            GameData.instance.gotWaterCan = true;
+            return 0;
+        }
+        // Any manual interaction with farmer NPC
+
+        return 1;
     }
 }

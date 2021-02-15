@@ -12,6 +12,8 @@ public class DialogueManager : MonoBehaviour
     private Vector2 textDimensions;
     private Vector2 boxScale;
     private PlayerController pc;
+    private SoundManager sm;
+    private AudioSource talkSource;
 
     private DialogueObject currentDialogueObject;
     private Vector2 pointTo;
@@ -40,6 +42,12 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.SetActive(false);
     }
 
+    private void Start()
+    {
+        sm = SoundManager.instance;
+        talkSource = sm.GetAudioSource(SoundManager.Sound.Talk);
+    }
+
     private void Update()
     {
         if (isWriting)
@@ -50,8 +58,7 @@ public class DialogueManager : MonoBehaviour
                 isWriting = false;
                 canProceed = true;
                 return;
-            }
-            // Play sound here
+            }            
 
             dialogueText.maxVisibleCharacters = visibleCount;
 
@@ -67,6 +74,10 @@ public class DialogueManager : MonoBehaviour
             if (visibleCount < totalVisibleCharacters)
             {
                 visibleCount++;
+                if (!talkSource.isPlaying)
+                {
+                    talkSource.Play();
+                }
             }
             else
             {
@@ -101,8 +112,11 @@ public class DialogueManager : MonoBehaviour
         StartDialogue();
     }
 
+    // Called whenever new dialogue string is to be shown (including first time)
     private void StartDialogue()
     {
+        sm.PlaySound(SoundManager.Sound.DialogueBox);
+
         boxScale = currentDialogueObject.dialogues[dialogueCounter].dialogueBoxScale;
 
         // Speech bubble popup

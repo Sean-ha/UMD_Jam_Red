@@ -891,8 +891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueObjects:
   - {fileID: 11400000, guid: 9c24c88b72a38474b8ae08e986be1312, type: 2}
-  - {fileID: 11400000, guid: 0cdac492ba4a2e645b38c2b2b0e414fb, type: 2}
-  - {fileID: 11400000, guid: 9e1ee419a3c75514fab70b96b70751ea, type: 2}
+  - {fileID: 11400000, guid: f500b5520c727064c9e98218cacacc36, type: 2}
   npcId: 2
 --- !u!61 &1338267472
 BoxCollider2D:

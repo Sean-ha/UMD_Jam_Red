@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cfa75a7b2b2dd540873360cdeddf403, type: 3}
+  m_Name: 1MysteryMan
+  m_EditorClassIdentifier: 
+  dialogues:
+  - dialogue: hey there
+    dialogueBoxScale: {x: 0.8, y: 1}
+  - dialogue: 'i bet i look super
+
+      suspicious right now'
+    dialogueBoxScale: {x: 1.2, y: 1.5}
+  - dialogue: anyways
+    dialogueBoxScale: {x: 0.6, y: 1}
+  - dialogue: 'i''ve heard there''s a
+
+      flower around here'
+    dialogueBoxScale: {x: 1, y: 1.5}
+  - dialogue: 'it''s said to have
+
+      magical properties'
+    dialogueBoxScale: {x: 1, y: 1.5}
+  - dialogue: 'apparently it can cure
+
+      EVERYTHING!'
+    dialogueBoxScale: {x: 1.2, y: 1.5}
+  - dialogue: or something
+    dialogueBoxScale: {x: 0.7, y: 1}
+  - dialogue: anyways
+    dialogueBoxScale: {x: 0.6, y: 1}
+  - dialogue: 'just thought you''d
+
+      be interested'
+    dialogueBoxScale: {x: 1, y: 1.5}
+  - dialogue: ...
+    dialogueBoxScale: {x: 0.3, y: 1}
+  - dialogue: huh?
+    dialogueBoxScale: {x: 0.3, y: 1}
+  - dialogue: 'i mean i don''t know
+
+      where it is'
+    dialogueBoxScale: {x: 1, y: 1.5}
+  - dialogue: that's on you my guy
+    dialogueBoxScale: {x: 1, y: 1}
+  - dialogue: good luck
+    dialogueBoxScale: {x: 0.6, y: 1}
+  id: 0

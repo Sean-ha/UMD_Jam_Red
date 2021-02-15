@@ -23,4 +23,6 @@ public class GameData : MonoBehaviour
     public int susan;
     public int april1;
     public int mom1;
+    public int mysteryMan1;
+    public bool gotWaterCan;
 }

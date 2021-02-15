@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cfa75a7b2b2dd540873360cdeddf403, type: 3}
+  m_Name: 1Farmer
+  m_EditorClassIdentifier: 
+  dialogues:
+  - dialogue: oh hey jen
+    dialogueBoxScale: {x: 0.8, y: 1}
+  - dialogue: how's your mother doing?
+    dialogueBoxScale: {x: 1.2, y: 1.5}
+  - dialogue: oh
+    dialogueBoxScale: {x: 0.3, y: 1}
+  - dialogue: by the way
+    dialogueBoxScale: {x: 0.8, y: 1}
+  - dialogue: 'i found this toy
+
+      watering pail'
+    dialogueBoxScale: {x: 1, y: 1.5}
+  - dialogue: 'i thought you might
+
+      want it'
+    dialogueBoxScale: {x: 1, y: 1.5}
+  - dialogue: here
+    dialogueBoxScale: {x: 0.4, y: 1}
+  - dialogue: take it
+    dialogueBoxScale: {x: 0.6, y: 1}
+  - dialogue: let me read the instructions for you
+    dialogueBoxScale: {x: 1.5, y: 1}
+  - dialogue: '"Press Z to water the ground
+
+      in front of you"'
+    dialogueBoxScale: {x: 1.4, y: 1.5}
+  - dialogue: ...
+    dialogueBoxScale: {x: 0.3, y: 1}
+  - dialogue: I don't really know what that means
+    dialogueBoxScale: {x: 1.6, y: 1}
+  - dialogue: but
+    dialogueBoxScale: {x: 0.3, y: 1}
+  - dialogue: you probably understand it
+    dialogueBoxScale: {x: 1.4, y: 1}
+  - dialogue: ...
+    dialogueBoxScale: {x: 0.3, y: 1}
+  - dialogue: right?
+    dialogueBoxScale: {x: 0.5, y: 1}
+  id: 2

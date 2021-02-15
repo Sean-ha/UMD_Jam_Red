@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/4MomsRoom.unity
     guid: 9f363bcc2064f1246b4c40b8d08c6729
+  - enabled: 1
+    path: Assets/Scenes/5FirstArea.unity
+    guid: 5d17703c427333e4abe37a663d6742db
   m_configObjects: {}

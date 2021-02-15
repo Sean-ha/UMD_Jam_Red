@@ -13,14 +13,22 @@ public class Door : MonoBehaviour
     public bool isFacingLeft;
 
     private Image blackTransition;
+    private SoundManager sm;
 
     private void Awake()
     {
         blackTransition = GameObject.FindGameObjectWithTag("BlackTransition").GetComponent<Image>();
     }
 
+    private void Start()
+    {
+        sm = SoundManager.instance;
+    }
+
     public void EnterDoor()
     {
+        sm.PlaySound(SoundManager.Sound.Door);
+
         blackTransition.color = new Color(0, 0, 0, 1);
         blackTransition.rectTransform.anchoredPosition = new Vector2(2000, 0);
 

@@ -108,7 +108,6 @@ public class PlayerController : MonoBehaviour
                 {
                     canMove = false;
                     horizontal = 0;
-                    sm.PlaySound(SoundManager.Sound.Door);
                     interactable.GetComponent<Door>().EnterDoor();
                 }
             }
@@ -210,11 +209,25 @@ public class PlayerController : MonoBehaviour
     public void SetCanMove(bool to)
     {
         canMove = to;
+
+        // QOL player input not getting eaten
+        if (canMove)
+        {
+            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+            {
+                isFacingRight = false;
+                horizontal = -1;
+            }
+            else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+            {
+                horizontal = 1;
+            }
+        }
     }
 
     public void PlayWalkSound()
     {
-        sm.GetAudioSource(SoundManager.Sound.Walk).pitch = Random.Range(0.84f, 0.87f);
+        sm.GetAudioSource(SoundManager.Sound.Walk).pitch = Random.Range(.95f, 1);
         sm.PlaySound(SoundManager.Sound.Walk);
     }
 

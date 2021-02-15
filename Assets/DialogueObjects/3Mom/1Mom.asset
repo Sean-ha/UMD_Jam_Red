@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 1Mom
   m_EditorClassIdentifier: 
   dialogues:
-  - dialogue: good morning dear
+  - dialogue: good morning sweetie
     dialogueBoxScale: {x: 1.2, y: 1}
   - dialogue: 'thanks for checking
 
@@ -31,17 +31,21 @@ MonoBehaviour:
 
       for a little bit'
     dialogueBoxScale: {x: 1, y: 1.5}
+  - dialogue: but
+    dialogueBoxScale: {x: 1, y: 1}
   - dialogue: 'when i get out of here, i''ll make you
 
       lots of fried beetle
       bread!!'
     dialogueBoxScale: {x: 1.7, y: 1.5}
   - dialogue: hehe
-    dialogueBoxScale: {x: 0.5, y: 1}
+    dialogueBoxScale: {x: 1, y: 1}
   - dialogue: you're excited about that, huh?
     dialogueBoxScale: {x: 1.4, y: 1}
   - dialogue: well
-    dialogueBoxScale: {x: 0.3, y: 1}
+    dialogueBoxScale: {x: 1, y: 1}
   - dialogue: look forward to it!!
+    dialogueBoxScale: {x: 1, y: 1}
+  - dialogue: i love you honey!!!
     dialogueBoxScale: {x: 1, y: 1}
   id: 0
