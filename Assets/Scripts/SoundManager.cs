@@ -12,7 +12,8 @@ public class SoundManager : MonoBehaviour
         Jump,
         Door,
         Talk,
-        DialogueBox
+        DialogueBox,
+        Watering
     }
 
     [System.Serializable]

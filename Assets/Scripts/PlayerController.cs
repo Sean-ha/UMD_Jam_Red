@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     private ParticleSystem.ShapeModule dustShape;
     private ParticleSystem jumpParticles;
     private SoundManager sm;
+    private GameData gd;
+    private WateringCan wateringCan;
 
     private LayerMask whatIsGround;
 
@@ -34,18 +36,21 @@ public class PlayerController : MonoBehaviour
         walkDust = transform.Find("WalkDust").GetComponent<ParticleSystem>();
         dustShape = walkDust.shape;
         jumpParticles = transform.Find("JumpParticles").GetComponent<ParticleSystem>();
+        wateringCan = transform.Find("WateringCan").GetComponent<WateringCan>();
     }
 
     private void Start()
     {
         sm = SoundManager.instance;
+        gd = GameData.instance;
     }
 
     void Update()
     {
+        // REMOVE LATER; DEBUGGING PURPOSES ONLY
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            Time.timeScale = 3;
+            Time.timeScale = 5;
         }
         else if (Input.GetKeyUp(KeyCode.LeftShift))
         {
@@ -58,6 +63,7 @@ public class PlayerController : MonoBehaviour
             CheckJump();
             CheckCancelJump();
             CheckInteract();
+            CheckWateringCan();
         }
 
         if (isFacingRight)
@@ -77,6 +83,8 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = new Vector2(horizontal * movementSpeed, rb.velocity.y);
     }
+
+    #region Interaction
 
     private void CheckInteract()
     {
@@ -113,6 +121,39 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    private void CheckWateringCan()
+    {
+        if (Input.GetKeyDown(KeyCode.Z) && IsGrounded())
+        {
+            if (gd.gotWaterCan)
+            {
+                WaterGround();
+            }
+        }
+    }
+
+    private void WaterGround()
+    {
+        canMove = false;
+        horizontal = 0;
+        wateringCan.gameObject.SetActive(true);
+
+        if (isFacingRight)
+        {
+            ParticleSystem.ShapeModule water = wateringCan.waterParticles.shape;
+            water.rotation = new Vector3(0, 0, -105);
+        }
+        else
+        {
+            ParticleSystem.ShapeModule water = wateringCan.waterParticles.shape;
+            water.rotation = new Vector3(0, 0, -210);
+        }
+        
+        wateringCan.GetComponent<Animator>().Play("WateringCan_Water");
+    }
+
+    #endregion
 
     #region movement
 
@@ -215,11 +256,14 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
             {
+                transform.localScale = new Vector2(-1, 1);
                 isFacingRight = false;
                 horizontal = -1;
             }
             else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
             {
+                transform.localScale = new Vector2(1, 1);
+                isFacingRight = true;
                 horizontal = 1;
             }
         }

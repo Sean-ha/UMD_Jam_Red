@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - dialogue: oh hey jen
-    dialogueBoxScale: {x: 0.8, y: 1}
+    dialogueBoxScale: {x: 0.6, y: 1}
   - dialogue: how's your mother doing?
-    dialogueBoxScale: {x: 1.2, y: 1.5}
+    dialogueBoxScale: {x: 1.2, y: 1}
   - dialogue: oh
     dialogueBoxScale: {x: 0.3, y: 1}
   - dialogue: by the way
@@ -34,11 +34,13 @@ MonoBehaviour:
   - dialogue: take it
     dialogueBoxScale: {x: 0.6, y: 1}
   - dialogue: let me read the instructions for you
-    dialogueBoxScale: {x: 1.5, y: 1}
+    dialogueBoxScale: {x: 1.6, y: 1}
   - dialogue: '"Press Z to water the ground
 
       in front of you"'
     dialogueBoxScale: {x: 1.4, y: 1.5}
+  - dialogue: '"Water flowers to make them bloom"'
+    dialogueBoxScale: {x: 1.7, y: 1}
   - dialogue: ...
     dialogueBoxScale: {x: 0.3, y: 1}
   - dialogue: I don't really know what that means
@@ -50,5 +52,5 @@ MonoBehaviour:
   - dialogue: ...
     dialogueBoxScale: {x: 0.3, y: 1}
   - dialogue: right?
-    dialogueBoxScale: {x: 0.5, y: 1}
+    dialogueBoxScale: {x: 0.4, y: 1}
   id: 2
