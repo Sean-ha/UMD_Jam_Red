@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private ParticleSystem walkDust;
     private ParticleSystem.ShapeModule dustShape;
     private ParticleSystem jumpParticles;
+    private SoundManager sm;
 
     private LayerMask whatIsGround;
 
@@ -33,6 +34,11 @@ public class PlayerController : MonoBehaviour
         walkDust = transform.Find("WalkDust").GetComponent<ParticleSystem>();
         dustShape = walkDust.shape;
         jumpParticles = transform.Find("JumpParticles").GetComponent<ParticleSystem>();
+    }
+
+    private void Start()
+    {
+        sm = SoundManager.instance;
     }
 
     void Update()
@@ -102,6 +108,7 @@ public class PlayerController : MonoBehaviour
                 {
                     canMove = false;
                     horizontal = 0;
+                    sm.PlaySound(SoundManager.Sound.Door);
                     interactable.GetComponent<Door>().EnterDoor();
                 }
             }
@@ -135,6 +142,7 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
+        sm.PlaySound(SoundManager.Sound.Jump);
         jumpParticles.Play();
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
     }
@@ -204,6 +212,12 @@ public class PlayerController : MonoBehaviour
         canMove = to;
     }
 
+    public void PlayWalkSound()
+    {
+        sm.GetAudioSource(SoundManager.Sound.Walk).pitch = Random.Range(0.84f, 0.87f);
+        sm.PlaySound(SoundManager.Sound.Walk);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("NPC") || collision.CompareTag("Door"))
@@ -215,6 +229,12 @@ public class PlayerController : MonoBehaviour
             canMove = false;
             horizontal = 0;
             collision.GetComponent<Door>().EnterDoor();
+        }
+        else if (collision.CompareTag("AutoNPC"))
+        {
+            collision.GetComponent<DialogueTrigger>().TriggerDialogue();
+            canMove = false;
+            horizontal = 0;
         }
     }
 

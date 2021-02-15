@@ -8,6 +8,8 @@ TagManager:
   - Door
   - SceneLoader
   - BlackTransition
+  - AutoNPC
+  - SoundEffect
   layers:
   - Default
   - TransparentFX

@@ -149,6 +149,15 @@ public class DialogueManager : MonoBehaviour
         dialogueText.gameObject.SetActive(false);
     }
 
+    #region Dialogue Events
+
+    private void AfterFirstApril()
+    {
+        GameObject.Find("ToMomsRoom").GetComponent<Door>().EnterDoor();
+    }
+
+    #endregion
+
     #region LeanTween setOnComplete
     private void ScaleBackArrow()
     {
@@ -164,6 +173,12 @@ public class DialogueManager : MonoBehaviour
     {
         pc.SetCanMove(true);
         pc.GetComponent<Animator>().Play("Player_Idle");
+
+        // Handles dialogue events
+        switch (currentDialogueObject.id)
+        {
+            case 1: AfterFirstApril(); break;
+        }
     }
 
     #endregion

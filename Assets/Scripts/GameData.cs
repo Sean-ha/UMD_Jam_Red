@@ -21,4 +21,6 @@ public class GameData : MonoBehaviour
 
     [HideInInspector]
     public int susan;
+    public int april1;
+    public int mom1;
 }

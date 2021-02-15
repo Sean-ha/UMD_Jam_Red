@@ -21,8 +21,6 @@ MonoBehaviour:
     dialogueBoxScale: {x: 1, y: 1}
   - dialogue: wait...
     dialogueBoxScale: {x: 0.5, y: 1}
-  - dialogue: what's going on?
-    dialogueBoxScale: {x: 1, y: 1}
   - dialogue: where am i?
     dialogueBoxScale: {x: 1, y: 1}
   id: 0
