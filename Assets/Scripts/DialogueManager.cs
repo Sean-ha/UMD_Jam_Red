@@ -183,6 +183,22 @@ public class DialogueManager : MonoBehaviour
         GameObject.Find("Farmer").transform.localScale = new Vector2(-1, 1);
     }
 
+    private void NeedToVisitMom()
+    {
+        StartCoroutine(WalkBack());
+    }
+
+    private IEnumerator WalkBack()
+    {
+        pc.SetCanMove(false);
+        pc.SetHorizontal(-1);
+
+        yield return new WaitForSeconds(0.1f);
+
+        pc.SetHorizontal(0);
+        pc.SetCanMove(true);
+    }
+
     #endregion
 
     #region LeanTween setOnComplete
@@ -210,6 +226,7 @@ public class DialogueManager : MonoBehaviour
         switch (currentDialogueObject.id)
         {
             case 1: AfterFirstApril(); break;
+            case 4: NeedToVisitMom(); break;
         }
     }
 

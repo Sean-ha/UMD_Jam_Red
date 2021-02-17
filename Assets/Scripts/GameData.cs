@@ -21,7 +21,7 @@ public class GameData : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
             flowerList = new bool[50];
-            gotWaterCan = true;
+             //gotWaterCan = true;
         }
         else
         {

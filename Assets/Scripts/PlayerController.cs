@@ -279,6 +279,15 @@ public class PlayerController : MonoBehaviour
                 horizontal = 1;
             }
         }
+        else
+        {
+            horizontal = 0;
+        }
+    }
+
+    public void SetHorizontal(int hori)
+    {
+        horizontal = hori;
     }
 
     public void PlayWalkSound()

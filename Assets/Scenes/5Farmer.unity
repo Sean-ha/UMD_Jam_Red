@@ -519,6 +519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfaf2ff696ab9fd45807b736e47d2354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  needToVisitHospitalDialogue: {fileID: 11400000, guid: 5bdb4b33faed93b42b849e51948a3b4c, type: 2}
 --- !u!1001 &483920708
 PrefabInstance:
   m_ObjectHideFlags: 0

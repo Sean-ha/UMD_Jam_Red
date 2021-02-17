@@ -10,9 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cfa75a7b2b2dd540873360cdeddf403, type: 3}
-  m_Name: 2MysteryMan
+  m_Name: 5VisitMom
   m_EditorClassIdentifier: 
   dialogues:
-  - dialogue: nothing to see here
-    dialogueBoxScale: {x: 1.2, y: 1}
-  id: 0
+  - dialogue: hello jen
+    dialogueBoxScale: {x: 0.6, y: 1}
+  - dialogue: have you visited the hospital yet?
+    dialogueBoxScale: {x: 1.6, y: 1}
+  - dialogue: "i'm sure your mom \nwants to see you!"
+    dialogueBoxScale: {x: 1, y: 1.5}
+  id: 4
