@@ -14,7 +14,9 @@ public class SoundManager : MonoBehaviour
         Talk,
         DialogueBox,
         Watering,
-        FlowerBloom
+        FlowerBloom,
+        Die,
+        Poof
     }
 
     [System.Serializable]

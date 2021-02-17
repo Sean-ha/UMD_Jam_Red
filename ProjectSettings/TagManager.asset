@@ -11,6 +11,7 @@ TagManager:
   - AutoNPC
   - SoundEffect
   - Flower
+  - Death
   layers:
   - Default
   - TransparentFX

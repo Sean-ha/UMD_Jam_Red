@@ -23,8 +23,8 @@ public class Flower : MonoBehaviour
             GetComponent<Animator>().Play("Flower_Grow");
             GameData.instance.flowerList[flowerId] = true;
             GameData.instance.lastFlower = flowerId;
-            GameData.instance.flowerPosition = transform.position;
-            GameData.instance.flowerScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+            GameData.instance.respawnPosition = transform.position;
+            GameData.instance.respawnScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
         }
     }
 

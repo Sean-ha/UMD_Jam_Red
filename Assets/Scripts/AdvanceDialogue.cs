@@ -13,6 +13,7 @@ public class AdvanceDialogue : MonoBehaviour
             case 3: return AdvanceMom();
             case 4: return AdvanceMysteryMan();
             case 5: return AdvanceFarmer();
+            case 6: return AdvanceKid();
         }
 
         return 0;
@@ -89,5 +90,24 @@ public class AdvanceDialogue : MonoBehaviour
             return 1;
         }
         return GameData.instance.farmer;
+    }
+
+    private static int AdvanceKid()
+    {
+        if (GameData.instance.kid == 3)
+        {
+            return 3;
+        }
+        if (GameData.instance.flowerList[1])
+        {
+            GameData.instance.kid = 3;
+            return 2;
+        }
+        if (GameData.instance.kid == 0)
+        {
+            GameData.instance.kid = 1;
+            return 0;
+        }
+        return GameData.instance.kid;
     }
 }

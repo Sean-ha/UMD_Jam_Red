@@ -11,8 +11,8 @@ public class GameData : MonoBehaviour
     // Gives most recent watered flowerId
     public int lastFlower;
     // Position and scene index of the last flower
-    public Vector2 flowerPosition;
-    public int flowerScene;
+    public Vector2 respawnPosition;
+    public int respawnScene;
 
     private void Awake()
     {
@@ -21,6 +21,7 @@ public class GameData : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
             flowerList = new bool[50];
+            gotWaterCan = true;
         }
         else
         {
@@ -35,4 +36,5 @@ public class GameData : MonoBehaviour
     public int mysteryMan1;
     public bool gotWaterCan;
     public int farmer;
+    public int kid;
 }

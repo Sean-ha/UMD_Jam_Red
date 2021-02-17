@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour
 
     private Transform overlapBoxTransform;
     private GameObject interactable;
+    private Image blackTransition;
 
     private bool isFacingRight = true;
 
@@ -26,6 +28,7 @@ public class PlayerController : MonoBehaviour
     private float horizontal;
 
     private bool canMove = true;
+    private bool isStatic;
 
     private void Awake()
     {
@@ -37,6 +40,7 @@ public class PlayerController : MonoBehaviour
         dustShape = walkDust.shape;
         jumpParticles = transform.Find("JumpParticles").GetComponent<ParticleSystem>();
         wateringCan = transform.Find("WateringCan").GetComponent<WateringCan>();
+        blackTransition = GameObject.FindGameObjectWithTag("BlackTransition").GetComponent<Image>();
     }
 
     private void Start()
@@ -81,7 +85,10 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontal * movementSpeed, rb.velocity.y);
+        if (!isStatic)
+        {
+            rb.velocity = new Vector2(horizontal * movementSpeed, rb.velocity.y);
+        }
     }
 
     #region Interaction
@@ -153,6 +160,17 @@ public class PlayerController : MonoBehaviour
         wateringCan.GetComponent<Animator>().Play("WateringCan_Water");
     }
 
+    private void Die()
+    {
+        sm.PlaySound(SoundManager.Sound.Die);
+        rb.bodyType = RigidbodyType2D.Static;
+        isStatic = true;
+        canMove = false;
+        horizontal = 0;
+        animator.Play("Player_Death");
+        CameraShake.instance.ShakeCamera(6, 0.5f);
+    }
+
     #endregion
 
     #region movement
@@ -220,13 +238,7 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
-    // For visualizing ground checker box thing
-    /*    void OnDrawGizmos()
-        {
-            Gizmos.color = Color.green;
-            Gizmos.DrawWireCube(new Vector2(overlapBoxTransform.position.x, overlapBoxTransform.position.y),
-                                new Vector2(0.52f, 0.02f));
-        }*/
+    #region Animation Events
 
     // Called when the turn around animation finishes
     public void TurnAround()
@@ -275,6 +287,50 @@ public class PlayerController : MonoBehaviour
         sm.PlaySound(SoundManager.Sound.Walk);
     }
 
+    public void PlayPoofSound()
+    {
+        sm.PlaySound(SoundManager.Sound.Poof);
+    }
+
+
+    // Spawns at the most recent checkpoint (flower)
+    public void Respawn()
+    {
+        int sceneToSpawnAt = 0;
+        // If no flowers have been watered yet, auto respawn at start of 6th scene
+        if (gd.respawnScene == 0)
+        {
+            sceneToSpawnAt = 6;
+        }
+        else
+        {
+            sceneToSpawnAt = gd.respawnScene;
+        }
+        SceneLoader.instance.SetSceneLoadData(sceneToSpawnAt, gd.respawnPosition, false);
+
+        blackTransition.color = new Color(0, 0, 0, 1);
+        blackTransition.rectTransform.anchoredPosition = new Vector2(2000, 0);
+
+        LeanTween.move(blackTransition.rectTransform, new Vector2(0, 0), .15f).setOnComplete(TransitionScene);
+    }
+
+    private void TransitionScene()
+    {
+        int sceneToSpawnAt = 0;
+        // If no flowers have been watered yet, auto respawn at start of 6th scene
+        if (gd.respawnScene == 0)
+        {
+            sceneToSpawnAt = 6;
+        }
+        else
+        {
+            sceneToSpawnAt = gd.respawnScene;
+        }
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToSpawnAt);
+    }
+
+    #endregion
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("NPC") || collision.CompareTag("Door"))
@@ -292,6 +348,10 @@ public class PlayerController : MonoBehaviour
             collision.GetComponent<DialogueTrigger>().TriggerDialogue();
             canMove = false;
             horizontal = 0;
+        }
+        else if (collision.CompareTag("Death"))
+        {
+            Die();
         }
     }
 
