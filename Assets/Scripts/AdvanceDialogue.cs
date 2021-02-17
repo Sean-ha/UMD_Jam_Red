@@ -70,14 +70,24 @@ public class AdvanceDialogue : MonoBehaviour
 
     private static int AdvanceFarmer()
     {
+        if (GameData.instance.flowerList[0])
+        {
+            GameData.instance.farmer = 3;
+            return 3;
+        }
         // The AutoNPC interaction
         if (!GameData.instance.gotWaterCan)
         {
             GameData.instance.gotWaterCan = true;
+            GameData.instance.farmer = 1;
             return 0;
         }
         // Any manual interaction with farmer NPC
-
-        return 1;
+        if (GameData.instance.farmer == 1)
+        {
+            GameData.instance.farmer = 2;
+            return 1;
+        }
+        return GameData.instance.farmer;
     }
 }

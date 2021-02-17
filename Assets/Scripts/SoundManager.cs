@@ -13,7 +13,8 @@ public class SoundManager : MonoBehaviour
         Door,
         Talk,
         DialogueBox,
-        Watering
+        Watering,
+        FlowerBloom
     }
 
     [System.Serializable]

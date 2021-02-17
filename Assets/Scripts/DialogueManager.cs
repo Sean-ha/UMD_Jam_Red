@@ -130,6 +130,7 @@ public class DialogueManager : MonoBehaviour
         Vector2 screenPos = Camera.main.WorldToScreenPoint(new Vector2(pointTo.x, pointTo.y + .8f));
         dialogueText.rectTransform.anchoredPosition = screenPos;
         dialogueText.rectTransform.sizeDelta = new Vector2(textDimensions.x * boxScale.x, textDimensions.y * boxScale.y);
+        dialogueText.rectTransform.localScale = new Vector2(0, 0);
 
         // DialogueArrow only has popup effect on first text
         if (dialogueCounter == 0)
@@ -138,6 +139,7 @@ public class DialogueManager : MonoBehaviour
             LeanTween.scale(dialogueArrow, new Vector2(1.2f, 1.2f), 0.1f).setOnComplete(ScaleBackArrow);
         }
         LeanTween.scale(dialogueBox, new Vector2(boxScale.x + 0.2f, boxScale.y + 0.2f), 0.1f).setOnComplete(ScaleBackBox);
+        LeanTween.scale(dialogueText.rectTransform, new Vector2(1.2f, 1.2f), 0.1f).setOnComplete(ScaleBackText);
 
         dialogueText.gameObject.SetActive(true);
         dialogueText.maxVisibleCharacters = 0;
@@ -148,6 +150,12 @@ public class DialogueManager : MonoBehaviour
 
         totalVisibleCharacters = dialogueText.textInfo.characterCount;
         visibleCount = 0;
+
+        // Handles dialogue events at start of dialogue
+        switch (currentDialogueObject.id)
+        {
+            case 3: AfterWateringByFarmer(); break;
+        }
 
         canProceed = false;
         isWriting = true;
@@ -170,6 +178,11 @@ public class DialogueManager : MonoBehaviour
         GameObject.Find("ToMomsRoom").GetComponent<Door>().EnterDoor();
     }
 
+    private void AfterWateringByFarmer()
+    {
+        GameObject.Find("Farmer").transform.localScale = new Vector2(-1, 1);
+    }
+
     #endregion
 
     #region LeanTween setOnComplete
@@ -181,6 +194,11 @@ public class DialogueManager : MonoBehaviour
     private void ScaleBackBox()
     {
         LeanTween.scale(dialogueBox, boxScale, 0.07f);
+    }
+
+    private void ScaleBackText()
+    {
+        LeanTween.scale(dialogueText.rectTransform, new Vector2(1, 1), 0.07f);
     }
 
     private void EnablePlayerMovement()
