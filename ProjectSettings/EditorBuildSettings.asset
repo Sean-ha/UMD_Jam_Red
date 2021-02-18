@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/6FirstArea.unity
     guid: 932fa21b142eb574eb1612f002a291b3
+  - enabled: 1
+    path: Assets/Scenes/Finale.unity
+    guid: 37e7e9d958280a44d82392c1d18fa81b
   m_configObjects: {}

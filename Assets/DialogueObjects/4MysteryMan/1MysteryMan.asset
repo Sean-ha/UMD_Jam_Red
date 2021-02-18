@@ -21,36 +21,56 @@ MonoBehaviour:
     dialogueBoxScale: {x: 1.2, y: 1.5}
   - dialogue: anyways
     dialogueBoxScale: {x: 0.6, y: 1}
-  - dialogue: 'i''ve heard there''s a
+  - dialogue: 'aren''t you sick of living
 
-      flower around here'
-    dialogueBoxScale: {x: 1, y: 1.5}
-  - dialogue: 'it''s said to have
+      in this cave?'
+    dialogueBoxScale: {x: 1.3, y: 1.5}
+  - dialogue: it's a dead end town here
+    dialogueBoxScale: {x: 1.3, y: 1}
+  - dialogue: 'yet why does everyone
 
-      magical properties'
-    dialogueBoxScale: {x: 1, y: 1.5}
-  - dialogue: 'apparently it can cure
-
-      EVERYTHING!'
-    dialogueBoxScale: {x: 1.2, y: 1.5}
-  - dialogue: or something
-    dialogueBoxScale: {x: 0.7, y: 1}
-  - dialogue: anyways
-    dialogueBoxScale: {x: 0.6, y: 1}
-  - dialogue: 'just thought you''d
-
-      be interested'
-    dialogueBoxScale: {x: 1, y: 1.5}
+      seem so content?'
+    dialogueBoxScale: {x: 1.3, y: 1.5}
   - dialogue: ...
     dialogueBoxScale: {x: 0.3, y: 1}
-  - dialogue: huh?
-    dialogueBoxScale: {x: 0.3, y: 1}
-  - dialogue: 'i mean i don''t know
+  - dialogue: 'there''s a vast world beyond
 
-      where it is'
-    dialogueBoxScale: {x: 1, y: 1.5}
-  - dialogue: that's on you my guy
+      these walls'
+    dialogueBoxScale: {x: 1.4, y: 1.5}
+  - dialogue: i've seen it with my own eyes
+    dialogueBoxScale: {x: 1.5, y: 1}
+  - dialogue: 'but nobody has bothered
+
+      to venture out'
+    dialogueBoxScale: {x: 1.3, y: 1.5}
+  - dialogue: maybe they're scared by the unknown
+    dialogueBoxScale: {x: 1.7, y: 1}
+  - dialogue: scared to fail
+    dialogueBoxScale: {x: 0.8, y: 1}
+  - dialogue: ...
+    dialogueBoxScale: {x: 0.3, y: 1}
+  - dialogue: you
+    dialogueBoxScale: {x: 0.4, y: 1}
+  - dialogue: you're still young
     dialogueBoxScale: {x: 1, y: 1}
-  - dialogue: good luck
+  - dialogue: 'do you want to live your
+
+      whole life here?'
+    dialogueBoxScale: {x: 1.5, y: 1.5}
+  - dialogue: 'do you want to grow old
+
+      and die here?'
+    dialogueBoxScale: {x: 1.5, y: 1.5}
+  - dialogue: 'without ever knowing what
+
+      else is out there?'
+    dialogueBoxScale: {x: 1.6, y: 1.5}
+  - dialogue: ...
+    dialogueBoxScale: {x: 0.3, y: 1}
+  - dialogue: whatever
     dialogueBoxScale: {x: 0.6, y: 1}
+  - dialogue: 'no use in trying to help people
+
+      who won''t help themselves'
+    dialogueBoxScale: {x: 1.7, y: 1.5}
   id: 0

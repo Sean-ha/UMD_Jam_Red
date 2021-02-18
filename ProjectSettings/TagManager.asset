@@ -12,6 +12,7 @@ TagManager:
   - SoundEffect
   - Flower
   - Death
+  - Boy
   layers:
   - Default
   - TransparentFX

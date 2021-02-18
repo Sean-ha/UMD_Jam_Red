@@ -125,6 +125,10 @@ public class PlayerController : MonoBehaviour
                     horizontal = 0;
                     interactable.GetComponent<Door>().EnterDoor();
                 }
+                else if (interactable.CompareTag("Boy"))
+                {
+                    interactable.GetComponent<Ending>();
+                }
             }
         }
     }
@@ -342,7 +346,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("NPC") || collision.CompareTag("Door"))
+        if (collision.CompareTag("NPC") || collision.CompareTag("Door") || collision.CompareTag("Boy"))
         {
             interactable = collision.gameObject;
         }
@@ -366,7 +370,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("NPC") || collision.CompareTag("Door"))
+        if (collision.CompareTag("NPC") || collision.CompareTag("Door") || collision.CompareTag("Boy"))
         {
             interactable = null;
         }
