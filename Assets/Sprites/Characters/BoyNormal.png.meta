@@ -1,46 +1,37 @@
 fileFormatVersion: 2
-guid: 669485b7aca0c9c4c89f805881911c95
+guid: 56a8a26a6f9f9be4cabfcd86e4a987dc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3373568495408583166
-    second: Flower_0
+      213: -3768905958263926194
+    second: BoyNormal_0
   - first:
-      213: 5540668397679465389
-    second: Flower_1
+      213: -6839786544502755432
+    second: BoyNormal_1
   - first:
-      213: -4610566733436411102
-    second: Flower_2
+      213: 7206898509143371936
+    second: BoyNormal_2
   - first:
-      213: 6581866111006463381
-    second: Flower_3
+      213: 829528610542846315
+    second: BoyNormal_3
   - first:
-      213: -2018457221746656894
-    second: Flower_4
+      213: -6257389389204813288
+    second: BoyNormal_4
   - first:
-      213: -722312468994564668
-    second: Flower_5
+      213: -2526402641184276816
+    second: BoyNormal_5
   - first:
-      213: -6098675972806692813
-    second: Flower_6
+      213: -3275808611798469091
+    second: BoyNormal_6
   - first:
-      213: 8318620416127688153
-    second: Flower_7
+      213: -7912984316725408723
+    second: BoyNormal_7
   - first:
-      213: 1162151868812139111
-    second: Flower_8
+      213: 7033480809444126506
+    second: BoyNormal_8
   - first:
-      213: -2396244139967781781
-    second: Flower_9
-  - first:
-      213: 6510716050570933824
-    second: Flower_10
-  - first:
-      213: 1087593287548664515
-    second: Flower_11
-  - first:
-      213: -3116411635298142980
-    second: Flower_12
+      213: -400983059110014321
+    second: BoyNormal_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -152,13 +143,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Flower_0
+      name: BoyNormal_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 40
-        height: 40
+        width: 33
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +157,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef117423ca251de20800000000000000
-      internalID: 3373568495408583166
+      spriteID: e4253dddff722bbc0800000000000000
+      internalID: -3768905958263926194
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_1
+      name: BoyNormal_1
       rect:
         serializedVersion: 2
-        x: 40
+        x: 33
         y: 0
-        width: 40
-        height: 40
+        width: 33
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +178,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da3daed4d8864ec40800000000000000
-      internalID: 5540668397679465389
+      spriteID: 89faa6360623411a0800000000000000
+      internalID: -6839786544502755432
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_2
+      name: BoyNormal_2
       rect:
         serializedVersion: 2
-        x: 80
+        x: 66
         y: 0
-        width: 40
-        height: 40
+        width: 33
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +199,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2232a48dbf9f300c0800000000000000
-      internalID: -4610566733436411102
+      spriteID: 0a078c1a20c040460800000000000000
+      internalID: 7206898509143371936
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_3
+      name: BoyNormal_3
       rect:
         serializedVersion: 2
-        x: 120
+        x: 99
         y: 0
-        width: 40
-        height: 40
+        width: 33
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +220,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 595d8b11b5c775b50800000000000000
-      internalID: 6581866111006463381
+      spriteID: b610e6250e3138b00800000000000000
+      internalID: 829528610542846315
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_4
+      name: BoyNormal_4
       rect:
         serializedVersion: 2
-        x: 160
+        x: 132
         y: 0
-        width: 40
-        height: 40
+        width: 33
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +241,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 289f77fd9dffcf3e0800000000000000
-      internalID: -2018457221746656894
+      spriteID: 81a062be0894929a0800000000000000
+      internalID: -6257389389204813288
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_5
+      name: BoyNormal_5
       rect:
         serializedVersion: 2
-        x: 200
+        x: 165
         y: 0
-        width: 40
-        height: 40
+        width: 33
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +262,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4cd5ebce2a4d9f5f0800000000000000
-      internalID: -722312468994564668
+      spriteID: 0be3a9cee2a60fcd0800000000000000
+      internalID: -2526402641184276816
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_6
+      name: BoyNormal_6
       rect:
         serializedVersion: 2
-        x: 240
+        x: 198
         y: 0
-        width: 40
-        height: 40
+        width: 33
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,20 +283,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 330b5a0d3862d5ba0800000000000000
-      internalID: -6098675972806692813
+      spriteID: d16369d6c6df982d0800000000000000
+      internalID: -3275808611798469091
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_7
+      name: BoyNormal_7
       rect:
         serializedVersion: 2
-        x: 280
+        x: 231
         y: 0
-        width: 40
-        height: 40
+        width: 33
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,20 +304,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9dd5a9cc13da17370800000000000000
-      internalID: 8318620416127688153
+      spriteID: d2c485050be6f2290800000000000000
+      internalID: -7912984316725408723
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_8
+      name: BoyNormal_8
       rect:
         serializedVersion: 2
-        x: 320
+        x: 264
         y: 0
-        width: 40
-        height: 40
+        width: 33
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,20 +325,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76a9a93a7fac02010800000000000000
-      internalID: 1162151868812139111
+      spriteID: a2fa17df781fb9160800000000000000
+      internalID: 7033480809444126506
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower_9
+      name: BoyNormal_9
       rect:
         serializedVersion: 2
-        x: 360
+        x: 297
         y: 0
-        width: 40
-        height: 40
+        width: 33
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -355,71 +346,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b64eb1a86a4debed0800000000000000
-      internalID: -2396244139967781781
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Flower_10
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 0
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 046f6b3b0c5ba5a50800000000000000
-      internalID: 6510716050570933824
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Flower_11
-      rect:
-        serializedVersion: 2
-        x: 440
-        y: 0
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3caff6c2558e71f00800000000000000
-      internalID: 1087593287548664515
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Flower_12
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 0
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cf4f820112840c4d0800000000000000
-      internalID: -3116411635298142980
+      spriteID: f825cc0480c6f6af0800000000000000
+      internalID: -400983059110014321
       vertices: []
       indices: 
       edges: []

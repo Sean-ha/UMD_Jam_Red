@@ -58,7 +58,7 @@ public class DialogueManager : MonoBehaviour
                 isWriting = false;
                 canProceed = true;
                 return;
-            }            
+            }
 
             dialogueText.maxVisibleCharacters = visibleCount;
 
@@ -167,8 +167,8 @@ public class DialogueManager : MonoBehaviour
         canProceed = false;
 
         LeanTween.scale(dialogueArrow, new Vector2(0, 0), 0.1f);
+        LeanTween.scale(dialogueText.rectTransform, new Vector2(0, 0), 0.1f);
         LeanTween.scale(dialogueBox, new Vector2(0, 0), 0.1f).setOnComplete(EnablePlayerMovement);
-        dialogueText.gameObject.SetActive(false);
     }
 
     #region Dialogue Events
@@ -199,6 +199,46 @@ public class DialogueManager : MonoBehaviour
         pc.SetCanMove(true);
     }
 
+    private void BoyTurns()
+    {
+        pc.SetCanMove(false);
+        pc.GetComponent<Animator>().Play("Player_LookUp");
+        StartCoroutine(BoyTurning());
+    }
+
+    private IEnumerator BoyTurning()
+    {
+        GameObject boy = GameObject.Find("Boy");
+        yield return new WaitForSeconds(1.3f);
+
+        boy.transform.localScale = new Vector2(1, 1);
+
+        yield return new WaitForSeconds(1.8f);
+
+        boy.GetComponent<DialogueTrigger>().TriggerDialogue();
+    }
+
+    private void BoyLeaves()
+    {
+        pc.SetCanMove(false);
+        StartCoroutine(BoyLeaving());
+    }
+
+    private IEnumerator BoyLeaving()
+    {
+        GameObject boy = GameObject.Find("Boy");
+        yield return new WaitForSeconds(.75f);
+
+        boy.GetComponent<Animator>().Play("BoyNormal_Walk");
+        LeanTween.moveLocalX(boy, 20, 4).setOnComplete(SetPlayerCanMove);
+        Destroy(boy, 4.1f);
+    }
+
+    private void SetPlayerCanMove()
+    {
+        pc.SetCanMove(true);
+    }
+
     #endregion
 
     #region LeanTween setOnComplete
@@ -222,11 +262,13 @@ public class DialogueManager : MonoBehaviour
         pc.SetCanMove(true);
         pc.GetComponent<Animator>().Play("Player_Idle");
 
-        // Handles dialogue events
+        // Handles dialogue events that happen after dialogue ends
         switch (currentDialogueObject.id)
         {
             case 1: AfterFirstApril(); break;
             case 4: NeedToVisitMom(); break;
+            case 5: BoyTurns(); break;
+            case 6: BoyLeaves(); break;
         }
     }
 

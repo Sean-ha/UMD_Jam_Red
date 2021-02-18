@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cfa75a7b2b2dd540873360cdeddf403, type: 3}
+  m_Name: 1BoyNormal
+  m_EditorClassIdentifier: 
+  dialogues:
+  - dialogue: ...
+    dialogueBoxScale: {x: 0.3, y: 1}
+  - dialogue: i left home for a change of pace
+    dialogueBoxScale: {x: 1.6, y: 1}
+  - dialogue: but
+    dialogueBoxScale: {x: 0.3, y: 1}
+  - dialogue: i wonder why
+    dialogueBoxScale: {x: 0.8, y: 1}
+  - dialogue: it feels as if nothing has changed
+    dialogueBoxScale: {x: 1.6, y: 1}
+  - dialogue: ...
+    dialogueBoxScale: {x: 0.3, y: 1}
+  id: 5

@@ -64,11 +64,11 @@ public class Ending : MonoBehaviour
         vcamMain.gameObject.SetActive(false);
         vcamEnd.gameObject.SetActive(true);
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
 
-        LeanTween.moveLocalY(vcamEnd.gameObject, vcamEnd.transform.localPosition.y + 1.8f, 4);
+        LeanTween.moveLocalY(vcamEnd.gameObject, vcamEnd.transform.localPosition.y + 1.8f, 5);
 
-        yield return new WaitForSeconds(9);
+        yield return new WaitForSeconds(10);
 
         blackScreen.gameObject.SetActive(true);
         LeanTween.alpha(blackScreen, 1, 3);
