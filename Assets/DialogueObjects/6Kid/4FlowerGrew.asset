@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 4FlowerGrew
   m_EditorClassIdentifier: 
   dialogues:
-  - dialogue: 'where can i get a
-
-      watering can?'
-    dialogueBoxScale: {x: 1, y: 1.5}
+  - dialogue: ...
+    dialogueBoxScale: {x: 0.3, y: 1}
+  - dialogue: what do i do now?
+    dialogueBoxScale: {x: 1, y: 1}
   id: 0

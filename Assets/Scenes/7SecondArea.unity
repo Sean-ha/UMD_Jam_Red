@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dcc1ffd99118a140aa5c95634f0f3f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToEnter: 0
+  sceneToEnter: 8
   position: {x: 0, y: 0}
   isFacingLeft: 0
 --- !u!1 &239131158

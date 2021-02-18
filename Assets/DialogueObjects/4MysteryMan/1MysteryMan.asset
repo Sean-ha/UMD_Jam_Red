@@ -69,8 +69,6 @@ MonoBehaviour:
     dialogueBoxScale: {x: 0.3, y: 1}
   - dialogue: whatever
     dialogueBoxScale: {x: 0.6, y: 1}
-  - dialogue: 'no use in trying to help people
-
-      who won''t help themselves'
-    dialogueBoxScale: {x: 1.7, y: 1.5}
+  - dialogue: i'm done
+    dialogueBoxScale: {x: 0.7, y: 1}
   id: 0

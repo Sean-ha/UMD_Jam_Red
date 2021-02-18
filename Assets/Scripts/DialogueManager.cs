@@ -234,6 +234,28 @@ public class DialogueManager : MonoBehaviour
         Destroy(boy, 4.1f);
     }
 
+    private void BoyLeaves2()
+    {
+        pc.SetCanMove(false);
+        StartCoroutine(BoyLeaving2());
+    }
+
+    private IEnumerator BoyLeaving2()
+    {
+        GameObject boy = GameObject.Find("Boy");
+        yield return new WaitForSeconds(.75f);
+
+        boy.transform.localScale = new Vector2(-1, 1);
+        boy.GetComponent<Animator>().Play("BoyNormal_Walk");
+
+        LeanTween.moveLocalX(boy, boy.transform.localPosition.x + 8, 4);
+        Destroy(boy, 4.1f);
+
+        yield return new WaitForSeconds(4);
+
+        pc.SetCanMove(true);
+    }
+
     private void SetPlayerCanMove()
     {
         pc.SetCanMove(true);
@@ -269,6 +291,7 @@ public class DialogueManager : MonoBehaviour
             case 4: NeedToVisitMom(); break;
             case 5: BoyTurns(); break;
             case 6: BoyLeaves(); break;
+            case 7: BoyLeaves2(); break;
         }
     }
 

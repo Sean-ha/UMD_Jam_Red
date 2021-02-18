@@ -114,7 +114,7 @@ public class AdvanceDialogue : MonoBehaviour
         return GameData.instance.kid;
     }
 
-    // 7: BoyNormal
+    // 7: BoyNormal 1
     private static int AdvanceBoy1()
     {
         if (GameData.instance.boy1 == 0)
@@ -124,4 +124,6 @@ public class AdvanceDialogue : MonoBehaviour
         }
         return GameData.instance.boy1;
     }
+
+    // 8: BoyNormal 2
 }

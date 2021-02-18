@@ -18,7 +18,7 @@ MonoBehaviour:
       stuff yet?'
     dialogueBoxScale: {x: 1.2, y: 1.5}
   - dialogue: 'like maybe '
-    dialogueBoxScale: {x: 0.5, y: 1}
+    dialogueBoxScale: {x: 0.6, y: 1}
   - dialogue: 'this suspicious little
 
       plant behind me!!'
