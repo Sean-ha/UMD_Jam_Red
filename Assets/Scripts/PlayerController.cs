@@ -127,7 +127,9 @@ public class PlayerController : MonoBehaviour
                 }
                 else if (interactable.CompareTag("Boy"))
                 {
-                    interactable.GetComponent<Ending>();
+                    canMove = false;
+                    horizontal = 0;
+                    interactable.GetComponent<Ending>().StartEnding();
                 }
             }
         }
@@ -303,6 +305,11 @@ public class PlayerController : MonoBehaviour
     public void PlayPoofSound()
     {
         sm.PlaySound(SoundManager.Sound.Poof);
+    }
+
+    public void PlaySitSound()
+    {
+        sm.PlaySound(SoundManager.Sound.Sit);
     }
 
 

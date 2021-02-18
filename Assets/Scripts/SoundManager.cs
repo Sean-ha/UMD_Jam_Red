@@ -16,7 +16,9 @@ public class SoundManager : MonoBehaviour
         Watering,
         FlowerBloom,
         Die,
-        Poof
+        Poof,
+        Sit,
+        Click
     }
 
     [System.Serializable]
