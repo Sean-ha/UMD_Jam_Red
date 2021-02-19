@@ -18,7 +18,8 @@ public class SoundManager : MonoBehaviour
         Die,
         Poof,
         Sit,
-        Click
+        Click,
+        EyesOpen
     }
 
     [System.Serializable]

@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: Assets/Scenes/9Fourth.unity
     guid: 33380dc1ba80cb649ba9e7ebc3bb4deb
   - enabled: 1
+    path: Assets/Scenes/10Eyeball.unity
+    guid: be35e9dd08cbc1a44a29aa5d7428451b
+  - enabled: 1
     path: Assets/Scenes/Finale.unity
     guid: 37e7e9d958280a44d82392c1d18fa81b
   m_configObjects: {}

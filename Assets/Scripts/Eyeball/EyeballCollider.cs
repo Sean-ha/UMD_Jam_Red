@@ -18,6 +18,7 @@ public class EyeballCollider : MonoBehaviour
     private void OpenEyes()
     {
         isOpen = true;
+        SoundManager.instance.PlaySound(SoundManager.Sound.EyesOpen);
         eyeBallLeft.GetComponent<Animator>().Play("Eyeball_Open");
         eyeBallRight.GetComponent<Animator>().Play("Eyeball_Open");
     }

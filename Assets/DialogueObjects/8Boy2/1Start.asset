@@ -21,6 +21,8 @@ MonoBehaviour:
     dialogueBoxScale: {x: 0.3, y: 1}
   - dialogue: you're trying to get away too?
     dialogueBoxScale: {x: 1.7, y: 1}
+  - dialogue: ...
+    dialogueBoxScale: {x: 0.3, y: 1}
   - dialogue: heh
     dialogueBoxScale: {x: 0.4, y: 1}
   - dialogue: 'everyone''s got their own
