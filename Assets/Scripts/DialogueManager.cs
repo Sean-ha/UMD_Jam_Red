@@ -230,8 +230,8 @@ public class DialogueManager : MonoBehaviour
         yield return new WaitForSeconds(.75f);
 
         boy.GetComponent<Animator>().Play("BoyNormal_Walk");
-        LeanTween.moveLocalX(boy, 20, 4).setOnComplete(SetPlayerCanMove);
-        Destroy(boy, 4.1f);
+        LeanTween.moveLocalX(boy, 20, 6).setOnComplete(SetPlayerCanMove);
+        Destroy(boy, 6.1f);
     }
 
     private void BoyTurns2()
@@ -248,10 +248,11 @@ public class DialogueManager : MonoBehaviour
 
         boy.transform.localScale = new Vector2(-1, 1);
         boy.GetComponent<Animator>().Play("BoyNormal_Walk");
-        LeanTween.moveLocalX(boy, boy.transform.localPosition.x + 1, 1);
+        LeanTween.moveLocalX(boy, boy.transform.localPosition.x + 2, 2);
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
 
+        pc.SetFacingRight();
         boy.GetComponent<Animator>().Play("BoyNormal_Idle");
 
         yield return new WaitForSeconds(1.5f);
@@ -271,7 +272,7 @@ public class DialogueManager : MonoBehaviour
         GameObject boy = GameObject.Find("Boy");
         yield return new WaitForSeconds(1.5f);
         boy.transform.localScale = new Vector2(1, 1);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         boy.GetComponent<DialogueTrigger>().TriggerDialogue();
     }
 

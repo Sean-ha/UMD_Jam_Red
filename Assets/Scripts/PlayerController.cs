@@ -265,6 +265,12 @@ public class PlayerController : MonoBehaviour
         transform.localScale = new Vector2(-1, 1);
     }
 
+    public void SetFacingRight()
+    {
+        isFacingRight = true;
+        transform.localScale = new Vector2(1, 1);
+    }
+
     public void SetCanMove(bool to)
     {
         canMove = to;

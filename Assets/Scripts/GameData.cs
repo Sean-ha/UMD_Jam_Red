@@ -20,7 +20,7 @@ public class GameData : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-            flowerList = new bool[50];
+            flowerList = new bool[10];
              gotWaterCan = true;
         }
         else

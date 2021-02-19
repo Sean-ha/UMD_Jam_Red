@@ -5,18 +5,36 @@ using UnityEngine;
 public class EyeballFollow : MonoBehaviour
 {
     public Transform eyePupil;
+    public bool isLeft;
+
     private Transform playerTransform;
 
-    private float distance = .15f;
+    private float distance = .3f;
 
     private void Awake()
     {
         playerTransform = FindObjectOfType<PlayerController>().transform;
     }
 
-    void Start()
+    private void Start()
     {
-        
+        // Moves eyes into proper location based on where player enters the room
+        if (isLeft)
+        {
+            // Enter from right side
+            if (playerTransform.localPosition.x > 40)
+            {
+                transform.localPosition = new Vector2(65, 2.88f);
+            }
+            // Enter from left side
+            else
+            {
+                transform.localPosition = new Vector2(16f, 2.88f);
+            }
+
+            GameObject.Find("EyeballRight").transform.localPosition = 
+                new Vector2(transform.localPosition.x + 3.5f, transform.localPosition.y);
+        }
     }
 
     void Update()

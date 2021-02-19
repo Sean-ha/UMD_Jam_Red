@@ -23,8 +23,8 @@ MonoBehaviour:
     dialogueBoxScale: {x: 0.4, y: 1}
   - dialogue: i'm a pretty anxious guy
     dialogueBoxScale: {x: 1.3, y: 1}
-  - dialogue: and i can't help but wonder sometimes
-    dialogueBoxScale: {x: 1.8, y: 1}
+  - dialogue: "and i can't help but wonder \nsometimes"
+    dialogueBoxScale: {x: 1.4, y: 1.5}
   - dialogue: 'if anyone actually cares
 
       about me'

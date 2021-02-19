@@ -19,8 +19,8 @@ MonoBehaviour:
     dialogueBoxScale: {x: 1.6, y: 1}
   - dialogue: but
     dialogueBoxScale: {x: 0.3, y: 1}
-  - dialogue: i wonder why
-    dialogueBoxScale: {x: 0.8, y: 1}
+  - dialogue: ...
+    dialogueBoxScale: {x: 0.3, y: 1}
   - dialogue: it feels as if nothing has changed
     dialogueBoxScale: {x: 1.6, y: 1}
   - dialogue: ...

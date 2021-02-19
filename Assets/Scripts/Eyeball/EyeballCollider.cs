@@ -7,12 +7,17 @@ public class EyeballCollider : MonoBehaviour
     private GameObject eyeBallLeft;
     private GameObject eyeBallRight;
 
-    private bool isOpen;
+    private static bool isOpen;
 
     private void Awake()
     {
         eyeBallLeft = GameObject.Find("EyeballLeft");
         eyeBallRight = GameObject.Find("EyeballRight");
+    }
+
+    private void Start()
+    {
+        isOpen = false;
     }
 
     private void OpenEyes()
