@@ -45,7 +45,10 @@ public class SceneLoader : MonoBehaviour
         LeanTween.move(blackTransition.rectTransform, new Vector2(-2000, 0), .15f).setOnComplete(OnBlackTransitionComplete);
 
         pc = FindObjectOfType<PlayerController>();
-        pc.SetCanMove(false);
+        if (pc != null)
+        {
+            pc.SetCanMove(false);
+        }
 
         // Move player to the proper location
         if (position.x != 0 && position.y != 0)
@@ -67,7 +70,10 @@ public class SceneLoader : MonoBehaviour
 
     private void OnBlackTransitionComplete()
     {
-        pc.SetCanMove(true);
+        if (pc != null)
+        {
+            pc.SetCanMove(true);
+        }
         blackTransition.color = new Color(0, 0, 0, 0);
     }
 }

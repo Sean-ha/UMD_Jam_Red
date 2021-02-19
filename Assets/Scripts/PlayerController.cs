@@ -51,16 +51,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // REMOVE LATER; DEBUGGING PURPOSES ONLY
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            Time.timeScale = 5;
-        }
-        else if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            Time.timeScale = 1;
-        }
-
         if (canMove)
         {
             CheckMovement();

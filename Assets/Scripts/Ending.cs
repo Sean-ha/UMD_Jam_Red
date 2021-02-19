@@ -86,5 +86,9 @@ public class Ending : MonoBehaviour
 
         SoundManager.instance.PlaySound(SoundManager.Sound.Click);
         endText.gameObject.SetActive(false);
+
+        yield return new WaitForSeconds(3);
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 }
