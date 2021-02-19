@@ -39,4 +39,5 @@ public class GameData : MonoBehaviour
     public int kid;
     public int boy1;
     public bool boy2;
+    public int deadGuy;
 }

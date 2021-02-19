@@ -15,6 +15,8 @@ public class AdvanceDialogue : MonoBehaviour
             case 5: return AdvanceFarmer();
             case 6: return AdvanceKid();
             case 7: return AdvanceBoy1();
+            case 8: return AdvanceBoy2();
+            case 9: return AdvanceDeadGuy();
         }
 
         return 0;
@@ -126,4 +128,23 @@ public class AdvanceDialogue : MonoBehaviour
     }
 
     // 8: BoyNormal 2
+    private static int AdvanceBoy2()
+    {
+        if (!GameData.instance.boy2)
+        {
+            GameData.instance.boy2 = true;
+        }
+        return 0;
+    }
+
+    // 9: DeadGuy
+    private static int AdvanceDeadGuy()
+    {
+        if (GameData.instance.deadGuy == 0)
+        {
+            GameData.instance.deadGuy = 1;
+            return 0;
+        }
+        return GameData.instance.deadGuy;
+    }
 }
