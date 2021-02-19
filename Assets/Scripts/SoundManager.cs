@@ -56,7 +56,7 @@ public class SoundManager : MonoBehaviour
             DontDestroyOnLoad(dict[clip.sound]);
             dict[clip.sound].tag = "SoundEffect";
             dict[clip.sound].clip = clip.audioClip;
-            dict[clip.sound].volume = 0.3f;
+            dict[clip.sound].volume = 0.6f;
         }
     }
 

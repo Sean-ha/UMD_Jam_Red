@@ -234,6 +234,47 @@ public class DialogueManager : MonoBehaviour
         Destroy(boy, 4.1f);
     }
 
+    private void BoyTurns2()
+    {
+        pc.SetCanMove(false);
+        pc.GetComponent<Animator>().Play("Player_LookUp");
+        StartCoroutine(BoyDialogueContinued());
+    }
+
+    private IEnumerator BoyDialogueContinued()
+    {
+        GameObject boy = GameObject.Find("Boy");
+        yield return new WaitForSeconds(1.3f);
+
+        boy.transform.localScale = new Vector2(-1, 1);
+        boy.GetComponent<Animator>().Play("BoyNormal_Walk");
+        LeanTween.moveLocalX(boy, boy.transform.localPosition.x + 1, 1);
+
+        yield return new WaitForSeconds(1);
+
+        boy.GetComponent<Animator>().Play("BoyNormal_Idle");
+
+        yield return new WaitForSeconds(1.5f);
+
+        boy.GetComponent<DialogueTrigger>().TriggerDialogue();
+    }
+
+    private void BoyTurnsBack()
+    {
+        pc.SetCanMove(false);
+        pc.GetComponent<Animator>().Play("Player_LookUp");
+        StartCoroutine(BoyTurnsBackCR());
+    }
+
+    private IEnumerator BoyTurnsBackCR()
+    {
+        GameObject boy = GameObject.Find("Boy");
+        yield return new WaitForSeconds(1.5f);
+        boy.transform.localScale = new Vector2(1, 1);
+        yield return new WaitForSeconds(1);
+        boy.GetComponent<DialogueTrigger>().TriggerDialogue();
+    }
+
     private void BoyLeaves2()
     {
         pc.SetCanMove(false);
@@ -291,7 +332,9 @@ public class DialogueManager : MonoBehaviour
             case 4: NeedToVisitMom(); break;
             case 5: BoyTurns(); break;
             case 6: BoyLeaves(); break;
-            case 7: BoyLeaves2(); break;
+            case 7: BoyTurns2(); break;
+            case 8: BoyTurnsBack(); break;
+            case 9: BoyLeaves2(); break;
         }
     }
 

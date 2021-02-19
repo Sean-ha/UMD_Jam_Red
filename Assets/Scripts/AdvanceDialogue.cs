@@ -130,11 +130,17 @@ public class AdvanceDialogue : MonoBehaviour
     // 8: BoyNormal 2
     private static int AdvanceBoy2()
     {
-        if (!GameData.instance.boy2)
+        if (GameData.instance.boy2 == 0)
         {
-            GameData.instance.boy2 = true;
+            GameData.instance.boy2 = 1;
+            return 0;
         }
-        return 0;
+        else if (GameData.instance.boy2 == 1)
+        {
+            GameData.instance.boy2 = 2;
+            return 1;
+        }
+        return GameData.instance.boy2;
     }
 
     // 9: DeadGuy

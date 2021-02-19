@@ -1063,7 +1063,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1442211482}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 54.64, y: -0.99, z: 0}
+  m_LocalPosition: {x: 54.8, y: -0.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1993598951}
@@ -3654,7 +3654,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueObjects:
-  - {fileID: 11400000, guid: dafbb95526a24884193e51c1f2638f5b, type: 2}
+  - {fileID: 11400000, guid: 54fca06535137ce40bf6031248d0f643, type: 2}
+  - {fileID: 11400000, guid: 96c465a43c31c074c9260174bfddbbec, type: 2}
+  - {fileID: 11400000, guid: 0226c1950c429174fb66c37ffb69eb3c, type: 2}
   npcId: 8
 --- !u!61 &4665070063488123636
 BoxCollider2D:

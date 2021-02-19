@@ -38,6 +38,6 @@ public class GameData : MonoBehaviour
     public int farmer;
     public int kid;
     public int boy1;
-    public bool boy2;
+    public int boy2;
     public int deadGuy;
 }

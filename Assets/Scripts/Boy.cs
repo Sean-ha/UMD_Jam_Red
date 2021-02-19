@@ -11,14 +11,14 @@ public class Boy : MonoBehaviour
         if (boyNumber == 1)
         {
             // If you've already seen boy's first dialogue, he no longer appears in the spot
-            if (GameData.instance.boy1 == 1 || GameData.instance.boy2)
+            if (GameData.instance.boy1 == 1 || GameData.instance.boy2 == 2)
             {
                 Destroy(gameObject);
             }
         }
         else if (boyNumber == 2)
         {
-            if (GameData.instance.boy2)
+            if (GameData.instance.boy2 == 2)
             {
                 Destroy(gameObject);
             }
