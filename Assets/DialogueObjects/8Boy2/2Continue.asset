@@ -63,4 +63,8 @@ MonoBehaviour:
     dialogueBoxScale: {x: 0.5, y: 1}
   - dialogue: how lame, right?
     dialogueBoxScale: {x: 1, y: 1}
+  - dialogue: 'why am i even saying
+
+      this stuff'
+    dialogueBoxScale: {x: 1.1, y: 1.5}
   id: 8

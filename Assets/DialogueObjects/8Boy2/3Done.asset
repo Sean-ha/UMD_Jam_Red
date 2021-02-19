@@ -21,14 +21,14 @@ MonoBehaviour:
     dialogueBoxScale: {x: 0.4, y: 1}
   - dialogue: i'm saying strange things again
     dialogueBoxScale: {x: 1.5, y: 1}
-  - dialogue: sorry for wasting your time
-    dialogueBoxScale: {x: 1.4, y: 1}
+  - dialogue: "and sorry for wasting \nyour time"
+    dialogueBoxScale: {x: 1, y: 1.5}
   - dialogue: but
     dialogueBoxScale: {x: 0.4, y: 1}
   - dialogue: thanks for listening to me
     dialogueBoxScale: {x: 1.3, y: 1}
-  - dialogue: it means a lot to me
-    dialogueBoxScale: {x: 1, y: 1}
+  - dialogue: it means a lot
+    dialogueBoxScale: {x: 0.7, y: 1}
   - dialogue: ...
     dialogueBoxScale: {x: 0.3, y: 1}
   - dialogue: well

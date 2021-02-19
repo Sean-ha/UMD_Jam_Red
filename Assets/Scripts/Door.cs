@@ -18,6 +18,7 @@ public class Door : MonoBehaviour
     private void Awake()
     {
         blackTransition = GameObject.FindGameObjectWithTag("BlackTransition").GetComponent<Image>();
+        sceneToEnter += 1;
     }
 
     private void Start()
